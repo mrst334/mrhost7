@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نشر موقع MR HOST على Netlify</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .step {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #4ECDC4;
+        }
+        .step h3 {
+            color: #4ECDC4;
+            margin-top: 0;
+        }
+        .link-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: transform 0.2s;
+        }
+        .link-button:hover {
+            transform: translateY(-2px);
+        }
+        .file-info {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 15px 0;
+        }
+        .status {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #90EE90;
+            margin: 20px 0;
+        }
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 نشر موقع MR HOST على Netlify</h1>
+        
+        <div class="status">✅ الملفات جاهزة للنشر!</div>
+
+        <div class="step">
+            <h3>📋 الخطوة 1: اذهب إلى Netlify</h3>
+            <p>ادخل على موقع Netlify لنشر موقعك مجاناً:</p>
+            <a href="https://app.netlify.com/drop" target="_blank" class="link-button">
+                🌐 فتح Netlify Drop
+            </a>
+        </div>
+
+        <div class="step">
+            <h3>📁 الخطوة 2: ملفات المشروع</h3>
+            <p>الملفات موجودة في مجلد: <code>dist/spa</code></p>
+            <div class="file-info">
+                <h4>محتويات المجلد:</h4>
+                <ul>
+                    <li>📄 index.html - الصفحة الرئيسية</li>
+                    <li>📁 assets/ - ملفات CSS و JavaScript</li>
+                    <li>🔧 _redirects - إعدادات التوجيه</li>
+                    <li>🖼️ favicon.ico - أيقونة الموقع</li>
+                    <li>🤖 robots.txt - ملف محركات البحث</li>
+                </ul>
+                <p><strong>حجم المجلد:</strong> ~3.2 MB</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>🖱️ الخطوة 3: النشر</h3>
+            <ol>
+                <li>افتح <strong>File Explorer</strong> (مستكشف الملفات)</li>
+                <li>انتقل إلى مجلد المشروع</li>
+                <li>ادخل إلى مجلد <code>dist/spa</code></li>
+                <li>حدد جميع الملفات في المجلد</li>
+                <li>اسحبها إلى صفحة Netlify Drop</li>
+                <li>انتظر انتهاء النشر (1-2 دقيقة)</li>
+            </ol>
+        </div>
+
+        <div class="step">
+            <h3>🎉 الخطوة 4: الحصول على الرابط</h3>
+            <p>بعد النشر ستحصل على رابط مثل:</p>
+            <div class="file-info">
+                <code>https://amazing-site-123456.netlify.app</code>
+            </div>
+            <p>يمكنك تخصيص اسم الموقع من إعدادات Netlify</p>
+        </div>
+
+        <div class="step">
+            <h3>🔧 طرق بديلة للنشر:</h3>
+            <a href="https://vercel.com" target="_blank" class="link-button">Vercel</a>
+            <a href="https://surge.sh" target="_blank" class="link-button">Surge.sh</a>
+            <a href="https://pages.github.com" target="_blank" class="link-button">GitHub Pages</a>
+        </div>
+
+        <div class="status">
+            <p>تطوير: عبدالله الغارني | MR HOST Team</p>
+            <p>© 2024 جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+
+    <script>
+        // تأثير بسيط
+        document.addEventListener('DOMContentLoaded', function() {
+            const steps = document.querySelectorAll('.step');
+            steps.forEach((step, index) => {
+                step.style.opacity = '0';
+                step.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    step.style.transition = 'all 0.6s ease';
+                    step.style.opacity = '1';
+                    step.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

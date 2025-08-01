@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MR HOST - اختبار النشر</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .status {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #90EE90;
+        }
+        .info {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+        .badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            margin: 0.5rem;
+            font-weight: bold;
+        }
+        .footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 MR HOST</h1>
+        <div class="status">✅ النشر نجح بنجاح!</div>
+        
+        <div class="info">
+            <p>🎉 مرحباً بك في موقع MR HOST للاستضافة الاحت��افية</p>
+            <p>الموقع يعمل الآن على خادم Netlify المجاني</p>
+        </div>
+
+        <div>
+            <span class="badge">React</span>
+            <span class="badge">Three.js</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Vite</span>
+        </div>
+
+        <div class="info">
+            <p><strong>الميزات المتاحة:</strong></p>
+            <p>✨ مخصص الخوادم ثلاثي الأبعاد</p>
+            <p>🎨 تصميم احترافي</p>
+            <p>📱 متجاوب مع جميع الأجهزة</p>
+            <p>⚡ أداء عالي</p>
+        </div>
+
+        <div class="footer">
+            <p>تطوير: عبدالله الغارني | MR HOST Team</p>
+            <p>© 2024 جميع الحقوق محفوظة</p>
+        </div>
+    </div>
+
+    <script>
+        // إضافة تأثير بسيط
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.querySelector('.container');
+            container.style.opacity = '0';
+            container.style.transform = 'translateY(30px)';
+            
+            setTimeout(() => {
+                container.style.transition = 'all 0.6s ease';
+                container.style.opacity = '1';
+                container.style.transform = 'translateY(0)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+app = "mr-host-app"
+primary_region = "fra"
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+
+[experimental]
+  auto_rollback = true
+
+[build]
+
+[env]
+  PORT = "8080"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+  # Static file serving with correct MIME types
+  [[http_service.static_file_handlers]]
+    url_prefix = "/assets/"
+    directory = "/app/dist/spa/assets"
+    
+    [[http_service.static_file_handlers.headers]]
+      name = "Content-Type"
+      value = "application/javascript; charset=utf-8"
+      path_pattern = "*.js"
+    
+    [[http_service.static_file_handlers.headers]]
+      name = "Content-Type" 
+      value = "application/javascript; charset=utf-8"
+      path_pattern = "*.mjs"
+    
+    [[http_service.static_file_handlers.headers]]
+      name = "Content-Type"
+      value = "text/css; charset=utf-8"
+      path_pattern = "*.css"
+    
+    [[http_service.static_file_handlers.headers]]
+      name = "Cache-Control"
+      value = "public, max-age=31536000, immutable"
+      path_pattern = "*"
+
+  # Root static files
+  [[http_service.static_file_handlers]]
+    url_prefix = "/"
+    directory = "/app/dist/spa"
+    
+    [[http_service.static_file_handlers.headers]]
+      name = "Content-Type"
+      value = "text/html; charset=utf-8"
+      path_pattern = "*.html"
+
+[[vm]]
+  memory = "1gb"
+  cpu_kind = "shared"
+  cpus = 1
+
+[mounts]
